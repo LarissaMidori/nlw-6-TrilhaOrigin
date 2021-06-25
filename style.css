@@ -1,9 +1,14 @@
 /* RESET */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+}
+
+ul{
+    list-style: none;
 }
 
 img{
@@ -12,6 +17,7 @@ img{
 }
 
 /* VARIÁVEIS */
+
 :root{
     --header-height: 7.2rem;
     --hue: 159;
@@ -26,21 +32,25 @@ img{
 }
 
 /* TAMANHO PADRÃO DAS FONTS */
+
 html{
     /* O normal é 1rem = 16px (User Agent) = 100% (User Agent)  ----> O padrão passa a ser 10px que fica 1rem quando mudamos o font-size para 62.5% */
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 /* BASE */
+
 body{
     font-family: 'DM Sans', sans-serif;
     font-size: 1.6rem;
+    font-weight: 400;
     color: var(--text-color);
     background: var(--body-color);
     -webkit-font-smoothing: antialiased;
 }
 
-h1{
+.title {
     font-family: 'Poppins', sans-serif;
     font-size: 3rem;
     font-weight: 700;
@@ -68,18 +78,28 @@ h1{
 }
 
 .divider-1{
+    height: 1px;
     background: linear-gradient(
     270deg,
-    hsla(var(--hue), 36%, 57%, 1) 0%,
-    hsla(var(--hue), 65%, 88%, 0.34) 100%
+    hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 65%, 88%, 0.34)
   );
-    height: .1rem;
 }
+
+.divider-2{
+    height: .1px;
+    background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
+  );
+}
+
 /* LAYOUT */
 
 .container{
-    width: 100%;
-    margin: 0 2.4rem;
+    margin-right: 2.4rem;
+    margin-left: 2.4rem;
 }
 
 .grid{
@@ -88,7 +108,19 @@ h1{
 }
 
 .section{
-    padding: 8rem 0 ;
+    padding: 8rem 0;
+}
+
+.section .title{
+    margin-bottom: 1.6px;
+}
+
+.section header{
+    margin-bottom: 6.4rem;
+}
+
+.section header strong{
+    color: var(--base-color);
 }
 
 #header{
@@ -102,16 +134,17 @@ h1{
     background-color: var(--body-color);
     top: 0;
     left: 0;
-
 }
 
-nav{
-    height: var(--header-height);
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+#header.scroll{
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
 }
+
+main{
+    margin-top: calc(var(--header-height) + 3.2rem);
+}
+
+/* LOGO */
 
 .logo{
     font-family: 'Poppins', sans-serif;
@@ -125,24 +158,107 @@ nav{
     color: var(--base-color);
 }
 
-main{
-    margin-top: var(--header-height);
+/* NAVIGATION */
+
+nav{
+    height: var(--header-height);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.container{
-    margin: 0 2.4rem;
+nav ul li{
+    text-align: center;
 }
 
-.grid{
+nav ul li a{
+    transition: color .2s;
+    position: relative;
+}
+
+nav ul li a:hover{
+    color: var(--base-color)
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0%;
+    height: .2rem;
+    background: var(--base-color);
+
+    position: absolute;
+    left: 0;
+    bottom: -2.4rem;
+
+    transition: .2s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+nav .menu{
+    opacity: 0;
+    visibility: hidden;
+    top: -32rem;
+    transition: .2s
+}
+
+nav .menu ul{
+    display: none;
+}
+
+/* MOSTRAR MENU */
+
+nav.show .menu{
+    opacity: 1;
+    visibility: visible;
+
+    background: var(--body-color);
+
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: grid;
-    gap: 3.2rem ;
+    place-content: center;
 }
 
-.section{
-    padding: 8rem 0 ;
+nav.show ul{
+    display: grid;
 }
 
-/* HOME */
+nav.show ul.grid{
+    gap: 6.4rem
+}
+
+/* TOGGLE MENU (interruptor) */ 
+
+.toggle{
+    color: var(--base-color);
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+nav .icon-close{
+    visibility: 0;
+    opacity: 0;
+    position: absolute;
+    top: -2.4rem;
+    right: 2.4rem;
+
+    transition: .2s;
+}
+
+nav.show div.icon-close{
+    visibility: visible;
+    opacity: 1;
+    top: 2.4rem;
+}
+
+
+/* ---------- HOME ---------- */
 
 #home{
     overflow: hidden;
@@ -171,19 +287,84 @@ position: relative;
     position: relative;
     right: 4.7rem;
 }
+
 #home .image img, #home .image::before{
     border-radius: .4rem;
 }
 
-
 #home .text{
-    margin: 0 2.4rem;
+    margin-right: 2.4rem;
+    margin-left: 2.4rem;
     text-align: center;
 }
 
-#home .text h1{
+#home .text h2{
     margin-bottom: 1.6rem;
 }
 #home .text p{
     margin-bottom: 3.2rem;
+}
+
+/* ---------- ABOUT ---------- */
+
+#about{
+    background: white;
+}
+
+#about .container{
+    margin: 0;
+}
+
+#about .image{
+position: relative;
+}
+
+#about .image::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: var(--base-color-second);
+    position: absolute;
+    top: -8.3%;
+    left: -33%;
+    z-index: 0;
+}
+
+#about .image img{
+    position: relative;
+}
+#about .image img, #about .image::before{
+    border-radius: .4rem;
+}
+
+
+#about .text{
+    margin-right: 2.4rem;
+    margin-left: 2.4rem;;
+}
+
+/* ---------- SERVICES ---------- */
+
+.cards.grid{
+    gap: 2.4rem;
+}
+
+.card{
+    padding: 5.8rem 3.2rem;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    border-bottom: .4rem solid var(--base-color);
+    border-radius: .4rem .4rem 0 0;
+    text-align: center;
+}
+
+.card i{
+    display: block;
+    margin-bottom: 2.4rem;
+    font-size: 8rem;
+    color: var(--base-color);
+}
+
+.card .title{
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
 }
