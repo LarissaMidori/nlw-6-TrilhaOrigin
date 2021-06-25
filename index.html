@@ -6,6 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!-- SWIPER SLIDER -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
         <!-- CSS -->
         <link rel="stylesheet" href="style.css">
 
@@ -38,6 +41,9 @@
         </header>
 
         <main>
+
+            <!-- HOME -->
+
             <section class="section" id="home">
                 <div class="container grid">
                     <div class="image">
@@ -52,6 +58,8 @@
             </section>
 
             <div class="divider-1"></div>
+
+            <!-- ABOUT -->
             
             <section class="section" id="about">
                 <div class="container grid">
@@ -70,6 +78,8 @@
             </section>
 
             <div class="divider-2"></div>
+
+            <!-- SERVICES -->
 
             <section class="section" id="services">
                 <div class="container grid">
@@ -105,8 +115,99 @@
                 </div>
             </section>
 
+            <div class="divider-1"></div>
+
+            <!-- TESTIMONIALS -->
+
+            <section class="section" id="testimonials">
+                <container class="container">
+                    <header>
+                        <h2 class="title">Depoimentos de quem já passou por aqui</h2>
+                    </header>
+                    <div class="testimonials swiper-container">
+
+                        <div class="swiper-wrapper">
+
+                            <div class="testimonial swiper-slide">
+                                <blockquote>
+                                    <p>
+                                        <span>&ldquo;</span>
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, eaque illum aliquid a reprehenderit earum. Officiis provident nam recusandae excepturi pariatur. Vel quod dolorem rerum aspernatur numquam amet voluptatem quidem.
+                                    </p>
+                                    <cite>
+                                        <img src="https://randomuser.me/api/portraits/women/79.jpg" alt="Foto de Carla Souza">
+                                        Carla Souza
+                                    </cite>
+                                </blockquote>   
+                            </div>
+    
+                            <div class="testimonial swiper-slide">
+                                <blockquote>
+                                    <p>
+                                        <span>&ldquo;</span>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum cum unde nostrum exercitationem vitae debitis corporis possimus? Accusantium totam veniam tenetur repellendus laudantium, neque ut iure eos laborum, voluptates soluta!
+                                    </p>
+                                    <cite>
+                                        <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Foto de Yara Marc">
+                                        Yara Marc
+                                    </cite>
+                                </blockquote>   
+                            </div>
+    
+                            <div class="testimonial swiper-slide">
+                                <blockquote>
+                                    <p>
+                                        <span>&ldquo;</span>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est harum expedita ut obcaecati? Qui vero eaque aliquam officia magnam harum eius mollitia hic nobis culpa, facilis et, alias iure blanditiis?
+                                    </p>
+                                    <cite>
+                                        <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Foto de Daniella Yuki">
+                                        Daniella Yuki
+                                    </cite>
+                                </blockquote>   
+                            </div>
+                            
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+
+                    </div>
+                </container>
+            </section>
+
+            <div class="divider-2"></div>
+            
+            <!-- CONTACT -->
+
+            <section class="section" id="contact">
+                <div class="container grid">
+
+                    <div class="text">
+                        <h2 class="title">Entre em contato com a gente!</h2>
+                        <p>Entre em contato com a Beautysalon, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.</p>
+                        <a href="https://api.whatsapp.com/send?phone=5511988887777&text=Olá, gostaria de agendar um horário." class="button" target="_blank"><i class="icon-whatsapp"></i>Entrar em contato</a>
+                    </div>
+
+                    <div class="links">
+                        <ul class="grid">
+                            <li><i class="icon-phone"></i>11 98888-7777</li>
+                            <li><i class="icon-map-pin"></i>Rua Amauri Souza, 346</li>
+                            <li><i class="icon-mail"></i>contato@beautysalo.com</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
         </main>
 
+        <!-- SWIPER SCRIPT-->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <!-- SCROLLREVEAL -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!-- MAIN.JS-->
         <script src="main.js"></script>
     </body>
 </html>
